@@ -8,13 +8,12 @@ import {
 } from '@chakra-ui/react';
 
 import Nav from '../Nav';
-import SmallCentered from '../Footer';
 
 export default function Inicio() {
   return (
     <>
       <Nav />
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={6} w={'full'} maxW={'lg'}>
             <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
@@ -43,23 +42,19 @@ export default function Inicio() {
               "Dedicarse muchas veces a una misma cosa con frecuencia vence al
               talento y al arte."
             </Text>
-
           </Stack>
         </Flex>
         <Flex flex={1} justify={'center'} align={'center'}>
           <Image
             alt={'Imagen perfil Ricardo'}
-            borderRadius='full'
-            height= '70%'
-            position= 'relative'
+            borderRadius="full"
+            height="70%"
+            position="relative"
             objectFit={'cover'}
-            src={
-              ' /perfil.png'
-            }
+            src={' /perfil.png'}
           />
         </Flex>
       </Stack>
-      <SmallCentered />
     </>
   );
 }

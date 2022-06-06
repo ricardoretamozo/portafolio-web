@@ -61,7 +61,7 @@ export default function Simple() {
                 width="40px"
               />
             </Box>
-            <Text   fontSize={{ base: 'md', xl : 'xl' }} color={'blue.400'} as={'span'} fontFamily='mono'>Ricardo Retamozo</Text>
+            <Text   fontSize={{ base: 'md', xl : 'xl' }} color={'blue.400'} as={'span'} fontFamily='mono'>RICARDO RETAMOZO</Text>
           </HStack>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={2}>
