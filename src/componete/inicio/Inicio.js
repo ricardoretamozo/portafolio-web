@@ -7,14 +7,11 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-import Nav from '../Nav';
-
 export default function Inicio() {
   return (
     <>
-      <Nav />
-      <Stack minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex p={8} flex={1} align={'center'} justify={'center'}>
+      <Stack  direction={{ base: 'column', md: 'row' }} >
+        <Flex p={8} flex={1} align={'center'} justify={'center'} mt={8}>
           <Stack spacing={6} w={'full'} maxW={'lg'}>
             <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
               <Text
@@ -49,7 +46,6 @@ export default function Inicio() {
             alt={'Imagen perfil Ricardo'}
             borderRadius="full"
             height="70%"
-            position="relative"
             objectFit={'cover'}
             src={' /perfil.png'}
           />

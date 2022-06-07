@@ -1,10 +1,9 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
   Avatar,
   HStack,
-  Link,
+  Link as LinkB,
   IconButton,
   Button,
   Menu,
@@ -20,11 +19,39 @@ import {
   Image,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Link as LinkA , useLocation} from 'react-router-dom';
 
-const Links = ['INICIO' , 'PERFIL PROFESIONAL', 'PROYECTOS' , 'NOTICIAS/ACTUALIDAD','NETWORKING'];
+const Links = [
+  {
+    id: 1,
+    nameLink: 'INICIO',
+    link: '/home',
+  },
+  {
+    id: 2,
+    nameLink: 'PERFIL PROFESIONAL',
+    link: '/perfilprofesional',
+  },
+  {
+    id: 3,
+    nameLink: 'PROYECTOS',
+    link: '/proyecto',
+  },
+  {
+    id: 4,
+    nameLink: 'NOTICIAS/ACTUALIDAD',
+    link: '/noticia',
+  },
+  {
+    id: 5,
+    nameLink: 'NETWORKING',
+    link: '/networking',
+  },
+];
 
-const NavLink = ({ children } = { children: ReactNode }) => (
-  <Link
+const NavLink = ({ children }) => {
+  const sampleLocation = useLocation();
+  return(  <LinkB
     px={2}
     py={1}
     rounded={'md'}
@@ -32,24 +59,35 @@ const NavLink = ({ children } = { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}
+    href={children.link}
+    as={LinkA}
+    to={children.link}
+    outline={sampleLocation.pathname=== children.link ? 'solid': ''}
+    outlineColor={sampleLocation.pathname=== children.link ? 'blue.400': ''}
   >
-    {children}
-  </Link>
-);
+    {children.nameLink}
+  </LinkB>);
+}
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box
+        bg={useColorModeValue('gray.100', 'gray.900')}
+        px={4}
+        as="header"
+        position="fixed"
+        w="100%"
+        zIndex={55}
+      >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            display={{ xl: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={6} alignItems={'center'}>
@@ -61,17 +99,24 @@ export default function Simple() {
                 width="40px"
               />
             </Box>
-            <Text   fontSize={{ base: 'md', xl : 'xl' }} color={'blue.400'} as={'span'} fontFamily='mono'>RICARDO RETAMOZO</Text>
+            <Text
+              fontSize={{ base: 'md', '2xl': '2xl' , lg : '2xl'}}
+              color={'blue.400'}
+              as={'span'}
+              fontFamily="mono"
+            >
+              RICARDO RETAMOZO
+            </Text>
           </HStack>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={2}>
               <HStack
                 as={'nav'}
                 spacing={4}
-                display={{ base: 'none', md: 'flex' }}
+                display={{ base: 'none', xl: 'flex' }}
               >
-                {Links.map(link => (
-                  <NavLink key={link}>{link}</NavLink>
+                {Links.map((link, index) => ( 
+                  <NavLink children={link} key={index} />
                 ))}
               </HStack>
               <Button onClick={toggleColorMode}>
@@ -82,10 +127,10 @@ export default function Simple() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
+          <Box pb={4} display={{ xl: 'none' }} >
             <Stack as={'nav'} spacing={4}>
-              {Links.map(link => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <NavLink children={link} key={index} />
               ))}
             </Stack>
           </Box>
