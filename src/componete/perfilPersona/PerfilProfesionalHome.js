@@ -82,10 +82,10 @@ function PerfilProfesionalHome() {
                   size="xl"
                   color={useColorModeValue('blue.400', 'blue.400')}
                 >
-                  Perfil Profesional
+                  Tarjeta de presentación
                 </Heading>
                 <Heading size="sm" fontWeight="normal">
-                  Refresh your wardrobe
+                  
                 </Heading>
               </Stack>
               <HStack spacing="3">
@@ -94,7 +94,7 @@ function PerfilProfesionalHome() {
                   fontWeight="bold"
                   fontSize="lg"
                 >
-                  Discover now
+                  Proximamente
                 </Link>
                 <Icon
                   color={useColorModeValue('red.500', 'red.300')}
@@ -105,7 +105,7 @@ function PerfilProfesionalHome() {
           </Box>
           <Flex flex="1" overflow="hidden">
             <Image
-              src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
+              src="./tarjeta.jpg"
               alt="Lovely Image"
               fallback={<Skeleton />}
               maxH="450px"
@@ -118,7 +118,7 @@ function PerfilProfesionalHome() {
                 base: 'none',
                 sm: 'initial',
               }}
-              src="https://images.unsplash.com/photo-1589156206699-bc21e38c8a7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
+              src="./tarjetaVertical.jpg"
               alt="Lovely Image"
               fallback={<Skeleton />}
               maxH="450px"
