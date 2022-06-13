@@ -11,10 +11,10 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
 
-  import { ReactElement } from 'react';
+  //import { ReactElement } from 'react';
   
   
-  const Feature = ({ text, icon, iconBg = ReactElement}) => {
+  const Feature = ({ text, icon, iconBg}) => {
     return (
       <Stack direction={'row'} align={'center'}>
         <Flex
