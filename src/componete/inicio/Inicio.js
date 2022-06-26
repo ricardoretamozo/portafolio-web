@@ -44,7 +44,7 @@ export default function Inicio() {
         <Flex flex={1} justify={'center'} align={'center'}>
           <Image
             alt={'Imagen perfil Ricardo'}
-            borderRadius="full"
+            
             height="70%"
             objectFit={'cover'}
             src={' /perfil.png'}

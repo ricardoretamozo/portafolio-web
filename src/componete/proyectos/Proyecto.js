@@ -1,19 +1,17 @@
 import React from 'react';
-import Inicio from './Inicio';
 import SmallCentered from '../Footer';
-import SplitWithImage from './SplitWithImage';
 import Nav from '../Nav';
+import Profile from './Profile';
 
-function Home() {
+function Proyecto() {
   return (
     <>
       <Nav />
-      <Inicio />
-      <SplitWithImage />
-
+      <Profile/>
       <SmallCentered />
+      
     </>
   );
 }
 
-export default Home;
+export default Proyecto;

@@ -9,6 +9,8 @@ import {
   Skeleton,
   Stack,
   useColorModeValue,
+  ListItem,
+  UnorderedList,
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
@@ -82,10 +84,27 @@ function PerfilProfesionalHome() {
                   size="xl"
                   color={useColorModeValue('blue.400', 'blue.400')}
                 >
-                  Tarjeta de presentación
+                  Fortalezas
                 </Heading>
                 <Heading size="sm" fontWeight="normal">
-                  
+                  <UnorderedList>
+                    <ListItem>
+                      Mi capacidad para innovar y con eso poder solucionar
+                      problemas específicos.
+                    </ListItem>
+                    <ListItem>
+                      Poder trabajar con normalidad bajo presión.
+                    </ListItem>
+                    <ListItem>
+                      Me considero una persona perseverante, mantengo una
+                      actitud constante e insistente en mis actividades para el
+                      logro de resultados.
+                    </ListItem>
+                    <ListItem>
+                      Resiliencia, tengo la capacidad de seguir adelante a pesar
+                      de las dificultades de la vida.
+                    </ListItem>
+                  </UnorderedList>
                 </Heading>
               </Stack>
               <HStack spacing="3">
@@ -94,7 +113,7 @@ function PerfilProfesionalHome() {
                   fontWeight="bold"
                   fontSize="lg"
                 >
-                  Proximamente
+                  Ver mas
                 </Link>
                 <Icon
                   color={useColorModeValue('red.500', 'red.300')}
