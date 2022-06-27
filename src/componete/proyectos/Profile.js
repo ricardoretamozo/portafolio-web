@@ -1,8 +1,10 @@
 import React from 'react';
-import { useMediaQuery } from '@chakra-ui/media-query';
-import { Box, Flex, Heading, Text ,VStack } from '@chakra-ui/layout';
+import { useMediaQuery, useBreakpointValue } from '@chakra-ui/media-query';
+import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/layout';
 import Icon from '@chakra-ui/icon';
-import { DiCodeigniter, DiAndroid, DiWebplatform } from 'react-icons/di';
+import { DiTechcrunch } from 'react-icons/di';
+import { FaSchool } from 'react-icons/fa';
+import { GiChemicalDrop } from 'react-icons/gi';
 
 function Profile() {
   const [isNotSmallerScreen] = useMediaQuery('(min-width:600px)');
@@ -15,17 +17,32 @@ function Profile() {
         maxWidth={{ base: '100vh', md: '130vh', lg: '130vh', xl: '130vh' }}
       >
         <Box alignSelf="center" px="32" py="16">
-          <Heading fontWeight="extrabold" color="cyan.500" size="4xl">
-            7+
+          <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+            <Text
+              as={'span'}
+              position={'relative'}
+              _after={{
+                content: "''",
+                width: 'full',
+                height: useBreakpointValue({ base: '20%', md: '30%' }),
+                position: 'absolute',
+                bottom: 1,
+                left: 0,
+                bg: 'blue.400',
+                zIndex: -1,
+              }}
+            >
+              Formación
+            </Text>
+            <br />{' '}
+            <Text color={'blue.400'} as={'span'}>
+              Académica
+            </Text>{' '}
           </Heading>
-          <Text fontSize="2xl" color="gray.400">
-            Years of Experience
-          </Text>
         </Box>
         <Box alignSelf="center" px="32" py="16">
           <Text fontWeight="bold" fontSize="2xl">
-            Product Designer and Developer, specialised in mobile app
-            development.
+            Educación:
           </Text>
           <Flex direction={isNotSmallerScreen ? 'row' : 'column'} mt={8}>
             <Flex
@@ -37,9 +54,9 @@ function Profile() {
               w="30vh"
               justify="flex-end"
             >
-              <Icon color="white" p="4" as={DiAndroid} w="24" h="24" />
+              <Icon color="white" p="4" as={DiTechcrunch} w="24" h="24" />
               <Text color="white" p="4" fontSize="xl" fontWeight="semibold">
-                Android Apps
+                Tecsup 2019-2022
               </Text>
             </Flex>
             <Flex
@@ -53,9 +70,9 @@ function Profile() {
               justify="flex-end"
               _hover={{ bg: 'teal.400' }}
             >
-              <Icon color="black" p="4" as={DiCodeigniter} w="24" h="24" />
+              <Icon color="black" p="4" as={GiChemicalDrop} w="24" h="24" />
               <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-                Flutter Apps
+                Linus Pauling 2015-2016
               </Text>
             </Flex>
             <Flex
@@ -69,9 +86,9 @@ function Profile() {
               justify="flex-end"
               _hover={{ bg: 'green.400' }}
             >
-              <Icon as={DiWebplatform} p="4" w="24" h="24" color="black" />
+              <Icon as={FaSchool} p="4" w="24" h="24" color="black" />
               <Text color="black" p="4" fontSize="xl" fontWeight="semibold">
-                Web Apps
+                Simón Bolívar 2011-2015
               </Text>
             </Flex>
           </Flex>
