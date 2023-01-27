@@ -36,11 +36,6 @@ const Links = [
     nameLink: 'NOTICIAS/ACTUALIDAD',
     link: '/noticia',
   },
-  {
-    id: 5,
-    nameLink: 'NETWORKING',
-    link: '/networking',
-  },
 ];
 
 const NavLink = ({ children }) => {
