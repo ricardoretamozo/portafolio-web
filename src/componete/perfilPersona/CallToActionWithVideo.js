@@ -102,7 +102,6 @@ export default function CallToActionWithVideo() {
             overflow={'hidden'}
           >
             <iframe
-              src="https://drive.google.com/file/d/1hckWaeCI0YaSYC4HZY0iC14QX2jDOqom/preview"
               width="100%"
               height="480"
               allow="autoplay"
